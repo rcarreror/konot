@@ -1,0 +1,115 @@
+\documentclass[a4paper,12pt,twoside]{report}
+\nocite{*} %TODO: quitar al añadir alguna cita
+
+%% Importar paquetes 
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{lmodern}
+\usepackage[autolanguage]{numprint}
+\usepackage[margin=25mm, includeheadfoot, bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{blindtext}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{subcaption}
+\usepackage{emptypage}
+\usepackage{lipsum}
+\usepackage{titlesec} 
+\usepackage[skip=15pt plus1pt, indent=5pt]{parskip}
+
+% Datos
+\title{Konot: Plataforma de despliegue y pruebas de redes virtuales}
+\author{Roberto Carrero Rodríguez}
+\newcommand{\autorPFG}{Roberto Carrero Rodríguez}
+
+% Estilo de texto
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.93}
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+\lstset{style=mystyle}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\newgeometry{top=1in, bottom=1in, left=1in, right=1in}
+
+% Cabecera y pie de página
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[LO]{Capítulo \thechapter}
+\fancyhead[RO]{\nouppercase{\leftmark}}
+\fancyhead[RE]{\autorPFG}
+\fancyhead[LE]{Proyecto Final Grado}
+\fancyfoot{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\setlength{\headheight}{16pt}
+\linespread{1.5}
+\counterwithin{figure}{section}
+
+
+% Inicio del documento
+\begin{document}
+
+% Selección del PDF de portada
+\includepdf[pages=1]{portada/portada.pdf}
+\cleardoublepage
+
+% Inicio
+\include{capitulos/0/agradecimientos}
+\include{capitulos/0/resumen}
+\pagestyle{empty} % para que lo anterior no aparezca en el índice
+\tableofcontents % índice
+\listoffigures % índice de figuras
+\pagestyle{fancy}
+
+
+% Capitulos
+\include{capitulos/1/1_0.tex}
+\include{capitulos/2/2_0.tex}
+\include{capitulos/3/3_0.tex}
+\include{capitulos/4/4_0.tex}
+\include{capitulos/5/5_0.tex}
+\include{capitulos/6/6_0.tex}
+\include{capitulos/7/7_0.tex}
+\include{capitulos/8/8_0.tex}
+\include{capitulos/9/9_0.tex}
+\include{capitulos/10/10_0.tex}
+\include{capitulos/11/11_0.tex}
+
+% BibTeX para bibliografía
+\bibliographystyle{plain}
+\bibliography{ref}
+
+% anexos
+\appendix
+\include{capitulos/anexos/anexos.tex}
+% ...
+
+\end{document}
