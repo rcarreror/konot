@@ -1,1 +1,1 @@
-# konot
+# <img src="/resources/logo/logo_black.png" alt="Konot logo" height=50 width=50 valign=bottom /> Konot
